@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="moon.css">
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+
+  <nav>
+    <div class="left">
+      <img src="./assets/shared/logo.svg" alt="">
+      <div class="line"></div>
+    </div>
+    
+    <div class="ext">
+     
+        <ul>
+          <li><a href="index.html"><span class="active">00 Home</span></a></li>
+          <li><a href="destination-moon.html">01 destinstion</a></li>
+          <li><a href="">02 crew</a></li>
+          <li><a href="">03 technology</a></li>
+        </ul>
+    </div>
+   </nav>
+  
+   <div class="heading">
+    <h1><span>01</span>Pick your destination</h1>
+  </div>
+<section>
+
+
+<div class="left">
+  <img src="./assets/destination/image-moon.png" alt="">
+</div>
+
+
+<div class="right">
+  <div class="innernav">
+    <ul>
+      <li><a href="">Moon</a> </li>
+      <li><a href=""> Mars</a></li>
+      <li><a href=""> Europa</a></li>
+      <li><a href="">Titan</a> </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1 style="text-transform: capitalize;">Moon</h1>
+   <div class="desc">
+    See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites
+   </div>
+</div>
+
+<div class="br"></div>
+<div class="facts">
+  <div class="box-1 box">
+  <h5>
+    Avg. distance
+  </h5>
+    <p>384,400 km</p>
+  </div>
+
+   <div class="box-2 box">
+    
+  <h5>Est. travel time</h5>
+  <p>
+    3 days
+  </p>
+   </div>
+</div>
+
+
+</section>
+
+
+  <script>
+    const select = document.querySelector('.innernav ul');
+    const items = document.querySelectorAll('.innernav ul li');
+    const a = document.querySelectorAll('.innernav ul li a');
+    for (let i = 0; i < items.length; i++) {
+      items[i].addEventListener('click', () => {
+        for (let j = 0; j < items.length; j++) {
+          items[j].classList.remove('active');
+        }
+        items[i].classList.add('active');
+      });
+    }
+  </script>
+</body>
+</html>
