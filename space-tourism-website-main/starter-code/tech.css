@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(./assets/technology/background-technology-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Header */
+nav{
+    width: 100%;
+    height: 96px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 213px;
+}
+
+.left{
+padding: 20%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.line{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    margin-right: 24px;
+}
+
+.ext{
+    width: 57%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(30px);
+}
+
+
+
+.ext ul {
+    height: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.ext ul li{
+    list-style: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.ext ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.con{
+    margin-bottom: 15%;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: aliceblue;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.con h1 span{
+    font-size: 30pxpx;
+    font-weight: 800;
+    color: rgb(60, 57, 57);
+}
+
+.in{
+width: 80vw;
+height: 100%;
+display: flex;
+}
+
+.in ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.in ul li {
+    margin-top: 30px;
+    list-style: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%; /* Makes the element round */
+    width: 90px; /* Set a fixed width */
+    height: 90px; /* Set the same height as width */
+    display: flex; /* Center the text inside */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: transparent; /* Add a background color */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.in ul .active{
+    background-color: white;
+    color: black;
+}
+.in ul li:hover {
+    background-color: white; 
+    color: black;
+    transform: scale(1.1); 
+}
+
+.box{
+width: 20%;
+height: 100%;
+display: flex;
+flex-direction: column;
+margin-left: 18%;
+}
+
+.box h2 ,p{
+    margin-top: 30px;
+    color: white;
+}
+
+
+.box h2{
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Bellefair', sans-serif;
+}
+
+.box p{
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(60, 57, 57);
+}
+.box .bio{
+    font-size: 18px;
+    font-weight: 800;
+    color: rgb(60, 57, 57);
+}
+
+section{
+    margin-top: -300px;
+    display: flex;
+}
+
+.out{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

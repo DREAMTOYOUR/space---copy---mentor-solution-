@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="moon.css">
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body>
+
+  <nav>
+    <div class="left">
+      <img src="./assets/shared/logo.svg" alt="">
+      <div class="line"></div>
+    </div>
+    
+    <div class="ext">
+     
+        <ul>
+          <li><a href="index.html"><span class="active">00 Home</span></a></li>
+          <li><a href="destination-moon.html">01 destinstion</a></li>
+          <li><a href="crew-commander.html">02 crew</a></li>
+          <li><a href="t">03 technology</a></li>
+        </ul>
+    </div>
+   </nav>
+  
+   <div class="heading">
+    <h1><span>01</span>Pick your destination</h1>
+  </div>
+<section>
+
+
+<div class="left">
+  <img src="./assets/destination/image-moon.png" alt="" id="img-l">
+</div>
+
+
+<div class="right">
+  <div class="innernav">
+    <ul>
+      <li><a href="destination-moon.html">Moon</a> </li>
+      <li><a href="destination-mars.html"> Mars</a></li>
+      <li><a href="destination-europa.html"> Europa</a></li>
+      <li><a href="destination-titan.html">Titan</a> </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1 style="text-transform: capitalize;" class="name">Moon</h1>
+   <div class="desc">
+    See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites
+   </div>
+</div>
+
+<div class="br"></div>
+<div class="facts">
+  <div class="box-1 box">
+  <h5>
+    Avg. distance
+  </h5>
+    <p class = 'fact-1'>384,400 km</p>
+  </div>
+
+   <div class="box-2 box">
+    
+  <h5>Est. travel time</h5>
+  <p class="fact-2"> 3 days</p>
+   </div>
+</div>
+
+
+</section>
+
+
+<script>
+  const select = document.querySelector('.innernav ul');
+  const items = document.querySelectorAll('.innernav ul li');
+  const anchors = document.querySelectorAll('.innernav ul li a');
+  const name = document.querySelector('.name');
+  const img = document.querySelector('#img-l');
+  const desc = document.querySelector('.desc');
+  const fact1 = document.querySelector('.fact-1');
+  const fact2 = document.querySelector('.fact-2');
+
+  const destinations = {
+    moon: {
+      name: "Moon",
+      img: "./assets/destination/image-moon.png",
+      desc: "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+      fact1: "384,400 km",
+      fact2: "3 days"
+    },
+    mars: {
+      name: "Mars",
+      img: "./assets/destination/image-mars.png",
+      desc: "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
+      fact1: "225 mil. km",
+      fact2: "9 months"
+    },
+    europa: {
+      name: "Europa",
+      img: "./assets/destination/image-europa.png",
+      desc: "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug winter cabin.",
+      fact1: "628 mil. km",
+      fact2: "3 years"
+    },
+    titan: {
+      name: "Titan",
+      img: "./assets/destination/image-titan.png",
+      desc: "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
+      fact1: "1.6 bil. km",
+      fact2: "7 years"
+    }
+  };
+
+  for (let i = 0; i < items.length; i++) {
+    items[i].addEventListener('click', () => {
+      for (let j = 0; j < items.length; j++) {
+        items[j].classList.remove('active');
+      }
+      items[i].classList.add('active');
+    });
+  }
+
+  anchors.forEach(anchor => {
+    anchor.addEventListener('click', (event) => {
+      event.preventDefault();
+      const destination = destinations[anchor.textContent.trim().toLowerCase()];
+      name.textContent = destination.name;
+      img.src = destination.img;
+      desc.textContent = destination.desc;
+      fact1.textContent = destination.fact1;
+     fact2.textContent = destination.fact2;
+    });
+  });
+</script>
+
+</body>
+</html>

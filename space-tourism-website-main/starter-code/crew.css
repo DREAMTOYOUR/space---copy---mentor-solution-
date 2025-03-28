@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(./assets/crew/background-crew-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* Header */
+nav{
+    width: 100%;
+    height: 96px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 213px;
+}
+
+.left{
+padding: 20%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.line{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    margin-right: 24px;
+}
+
+.ext{
+    width: 57%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(30px);
+}
+
+
+
+.ext ul {
+    height: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.ext ul li{
+ 
+    list-style: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.ext ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.main-h{
+    color: #b1b1d9;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+
+.main-h span{
+    color: #8c8c92;
+}
+main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-top: -13%;
+}
+main .left{
+    padding: 20%;
+    width: 50%;
+    height: 100%;
+    display: list-item;
+}
+
+main .right{
+    padding: 20%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.img-c{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.post-c h1{
+    color: white;
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.name{
+    display: block;
+    color: #b1b1d9;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.typedtext {
+    text-align: center;
+    color: #b1b1d9;
+    font-size: 30px;
+    font-weight: bold;
+   margin: 10px, 50px;
+   letter-spacing: 6px;
+    margin-bottom: 24px;
+    margin-top: 10px;
+   font-family: 'waiting-for-the-sunrise', cursive;
+}

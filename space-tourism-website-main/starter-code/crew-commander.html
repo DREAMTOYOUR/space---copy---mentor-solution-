@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+  <link rel="stylesheet" href="crew.css">
+</head>
+<body>
+
+
+  
+ <nav>
+  <div class="left">
+ <img src="assets/shared/logo.svg" alt="">
+    <div class="line"></div>
+  </div>
+  
+  <div class="ext">
+   
+      <ul>
+        <li><a href=""><span class="active">00 Home</span></a></li>
+        <li><a href="destination-moon.html">01 Destination</a></li>
+        <li><a href="">02 crew</a></li>
+        <li><a href="">03 technology</a></li>
+      </ul>
+  </div>
+ </nav>
+ <div class="main-h"><span>02</span> Meet your crew</div>
+ <main class="section">
+  <div class="left">
+ <div class="post-c"><h1>ROLE</h1></div>
+
+ <div class="name"><h1>NAME</h1></div>
+  <div id="typedtext" class="typedtext">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</div>
+  </div>
+  <div class="right">
+    <img src="./assets/crew/image-douglas-hurley.png" alt="" class="u-img">
+  </div>
+ </main>
+ <script>
+  const post = document.querySelector('.post-c');
+  const name = document.querySelector('.name');
+  const bio = document.querySelector('.typedtext');
+  const img = document.querySelector('.u-img');
+
+  let data;
+  let index = 0;
+
+  const update = () => {
+    post.querySelector('h1').textContent = data[index].role;
+    name.querySelector('h1').textContent = data[index].name;
+
+    // Start the typewriter effect for the biography
+    startTypewriter(data[index].bio, () => {
+      // Update the image only after the biography is fully typed
+      img.src = data[index].images.png; 
+      img.style.animation = 'fade 1s ease-in-out';
+    });
+
+    // Increment the index to show the next crew member
+    index = (index + 1) % data.length;
+  };
+
+  // Fetch the crew data from data.json
+  fetch("./data.json")
+    .then(response => response.json())
+    .then(json => {
+      data = json.crew;
+
+      // Immediately update the page with the first crew member's details (Douglas)
+      post.querySelector('h1').textContent = data[0].role;
+      name.querySelector('h1').textContent = data[0].name;
+
+      // Start the typewriter effect for Douglas's biography
+      startTypewriter(data[0].bio, () => {
+        img.src = data[0].images.png;
+      });
+
+      // Start cycling through the crew members every 10 seconds
+      setInterval(update, 10000);
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
+  // Typewriter effect variables
+  let iSpeed = 40; // Time delay of print out
+  let iTextPos = 0; // Initialise text position
+  let sContents = ''; // Initialise contents variable
+
+  function startTypewriter(text, callback) {
+    iTextPos = 0; // Reset text position
+    sContents = ''; // Reset contents
+    typewriter(text, callback);
+  }
+
+  function typewriter(text, callback) {
+    const destination = document.getElementById("typedtext");
+
+    // Type the text character by character
+    sContents = text.substring(0, iTextPos) + "_";
+    destination.innerHTML = sContents;
+
+    if (iTextPos++ < text.length) {
+      setTimeout(() => typewriter(text, callback), iSpeed);
+    } else {
+      // Call the callback function after typing is complete
+      if (callback) callback();
+    }
+  }
+</script>
+</body>
+</html>

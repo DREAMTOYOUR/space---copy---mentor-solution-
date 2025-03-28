@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+<link rel="stylesheet" href="tech.css">
+</head>
+<body>
+  <nav>
+    <div class="left">
+      <img src="./assets/shared/logo.svg" alt="">
+      <div class="line"></div>
+    </div>
+    
+    <div class="ext">
+     
+        <ul>
+          <li><a href=""><span class="active">00 Home</span></a></li>
+          <li><a href="destination-moon.html">01 destinstion</a></li>
+          <li><a href="crew-commander.html">02 crew</a></li>
+          <li><a href="technology-vehicle.html">03 technology</a></li>
+        </ul>
+    </div>
+   </nav>
+
+ 
+<div class="con">
+  <h1><span>03</span>
+    Space launch 101</h1>
+</div>
+<div class="r">
+   <section>
+    <div class="in">
+      <ul>
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    
+      <div class="box">
+        <p>The terminology..</p>
+        <h2 class="name">NAME</h2>
+        <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nam dicta debitis? Quibusdam nesciunt, cumque quaerat fuga quas ad ducimus illum corrupti explicabo corporis! Id omnis consequuntur qui veritatis, ad ipsa et non tempore aspernatur laborum, eveniet soluta?</p>
+      </div>
+    </div>
+
+   <div class="out">
+    <img src="" alt="" class="v">
+   </div>
+   </section>
+</div>
+   <script>
+    const notItems = document.querySelectorAll(".in ul li"); 
+    const name = document.querySelector(".name");
+    const bio = document.querySelector(".bio"); 
+    const img = document.querySelector(".v");
+  
+    // Fetch the technology data from data.json
+    fetch("./data.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const technology = data.technology; 
+  
+        notItems.forEach((item, index) => {
+         item.addEventListener('click', ()=>{
+          name.textContent = technology[index].name; // Update the name
+          bio.textContent = technology[index].description; // Update the bio
+          img.src = technology[index].images.portrait; // Update the image source
+         })
+        });
+  
+        // Initialize the page with the first technology item
+        name.textContent = technology[0].name;
+        bio.textContent = technology[0].description;
+        img.src = technology[0].images.portrait;
+        img.alt = technology[0].name;
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  </script>
+
+  </body>
+</html>
